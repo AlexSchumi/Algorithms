@@ -8,13 +8,15 @@ class Solution:
         start = 0
         end = len(nums) - 1
 
-        while (start + 1 < end):
+        while (start + 1 < end): # always using this criterion
             mid = (start + end) // 2
             if nums[mid] == target:
                 return mid
             elif nums[mid] > target:
                 end = mid - 1
+                #end = mid
             else:
+                #start = mid
                 start = mid + 1
 
         if start == end:

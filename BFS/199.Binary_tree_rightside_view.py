@@ -18,23 +18,35 @@ class Solution:
 
         queue = []
         queue.append(root)
-        cnt = 1 # denotes how many nodes in the tree level
-        pop_cnt = 0
+
         while queue:
-            #if len(queue) == 1: # if we have the length is one, which means we have last node in this level
-            node = queue.pop(0) # pop the queue from the left
-            if (cnt - pop_cnt) == 1:
-                res.append(node.val)
-            pop_cnt += 1
-
-            if tmp.left:
-                cnt += 1
-                queue.append(node.left)
-            if tmp.right:
-                cnt += 1
-                queue.append(node.right)
-
+            size = len(queue)
+            for i in range(size): # for this level's node
+                node = queue.pop(0) # pop the queue from the left
+                if i == size - 1: # we have finished traversal for this level
+                    res.append(node.val)
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
         return res
+
+
 """
 Think about how to impose level information in tree level traversal
+add a variable size, which equal to the length of node in one level
+
+a loop for the level
 """
+
+"""
+Time complexity: O(n)  since we traverse every node one by one
+space complexity: O(n)
+"""
+
+root = TreeNode(1)
+root.left = TreeNode(2)
+root.right = TreeNode(3)
+root.left.right = TreeNode(5)
+root.left.right.left = TreeNode(8)
+print(Solution().rightSideView(root))

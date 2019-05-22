@@ -33,7 +33,7 @@ def my_merge_sort(a):
     hi = len(a) - 1
     sort(a, lo, hi)
 
-seq = [2, 5, 8, 10, 2, 1, 3,9, 6, 12]
+seq = [2, 5, 8, 10, 2, 1, 3, 9, 6, 12]
 print(seq)
 my_merge_sort(seq)
 print(seq)

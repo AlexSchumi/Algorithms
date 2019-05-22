@@ -11,7 +11,6 @@ class Solution(object):
             return
 
         heaps = []
-
         for cnt in nums:
             if len(heaps) < k:
                 heapq.heappush(heaps,cnt)
@@ -19,5 +18,4 @@ class Solution(object):
                 if cnt > heaps[0]:
                     heapq.heappop(heaps)
                     heapq.heappush(heaps, cnt)
-
         return heaps[0]

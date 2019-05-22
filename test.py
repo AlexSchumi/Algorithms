@@ -111,3 +111,38 @@ a.remove(5)
 A = [ord(x) - ord('a') for x in xx]
 test_a = 'abc'
 print(4562 / 10 % 10)
+
+test = 'abcd'
+test = test[:len(test)-1]
+
+dict = {2:['a','b','c'],3:['d','e','f'],4:['g','h','i'],5:['j','k','l'],\
+6:['m','n','o'],7:['p','q','r','s'],8:['t','u','v'],9:['w','x','y','z']}
+digits = '234'
+#print(digits[1])
+
+
+myarray = [1,2,3]
+def test(nums):
+    #nums.append(5)
+    nums[2] = 5
+#print(myarray)
+#test(myarray)
+#print(myarray)
+#queue = [(1,2),(3,4),(5,6)]
+#print(queue[-1][1])
+import copy
+visited = [[0] * 2 for k in range(1)] # create a visited matrix for backtracking
+print(visited[0][1])
+tt = [[1,2,3],[4,5],[1]]
+aa = copy.deepcopy(tt)
+aa[0][0] = 100
+print(tt[0][0])
+print(list('tea'))
+print(list('eat'))
+s = 'love'
+print(".".join(sorted(s)))
+print(list(s))
+t = ["flower","flow","flight"]
+res = []
+res.append([3])
+print(res)

@@ -56,8 +56,23 @@ def mymerge2(intervals):
     return res
 
 
+def merge3(intervals):
+    res = []
+    if not intervals or len(intervals) == 0:
+        return res
+    intervals.sort(key=lambda x: x.start)
+    s = intervals[0].start
+    e = intervals[0].end
+    for i in range(len(intervals)):
+        if intervals[i].start < e:
+            e = max(intervals[i].end, e)
+        else:
+            res.append(Interval(s, e))
+            s = intervals[i].start
+            e = intervals[i].end
 
-
+    res.append(Interval(s,e))
+    return res
 
 
 a1 = Interval(1, 3)
@@ -70,3 +85,4 @@ interval.sort(key=lambda x: x.start)
 print(interval[1].start)
 
 print(mymerge2(interval)[2].end)
+print(merge3(interval)[2].end)
